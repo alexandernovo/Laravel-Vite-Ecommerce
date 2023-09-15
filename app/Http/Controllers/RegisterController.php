@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -56,7 +57,8 @@ class RegisterController extends Controller
             $save = User::create($data);
 
             if ($save) {
-                return redirect()->route('register')->with('success', 'Register Successfully');
+                Auth::login($save);
+                return redirect()->route('user')->with('success', 'Welcome ' . $this->request->input('name'));
             }
         }
     }
