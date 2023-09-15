@@ -2,7 +2,7 @@
 @section('content')
 <div class="container flex mx-auto justify-between">
     <div class="w-full sm:w-full md:w-full lg:w-1/2 p-10">
-        <img class="w-full h-full" src="assets/images/shoes-transparent.png">
+        <img class="w-full h-full" src="assets/images/register.jpg">
     </div>
     <div class="w-full sm:w-full md:w-full lg:w-1/2 p-12 flex items-center">
         <div class="flex-1 ">
