@@ -41,6 +41,7 @@ Route::get('/user', [UserController::class, 'userhome'])->name('user');
 //Shop Controller
 Route::get('/shop', [ShopController::class, 'usershop'])->name('shop');
 Route::get('/shop/registerShop', [ShopController::class, 'registerShop'])->name('registerShop'); //registerShopView
+Route::post('/shop/registerShopPost', [ShopController::class, 'registerShopPost'])->name('registerShopPost'); //registerShopPost
 
 //Product Controller
 Route::get('/products', [ProductController::class, 'products'])->name('products');
