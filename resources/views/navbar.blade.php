@@ -14,7 +14,7 @@
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="#" class="flex items-center">
                     <div class="w-10 h-10 shadow">
-                        <img class="w-full h-full" src="assets/images/logo.png" />
+                        <img class="w-full h-full" src="/assets/images/logo.png" />
                     </div>
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">AEN</span>
                 </a>
@@ -50,7 +50,7 @@
                                 Get Started
                                 @else
                                 <div class="w-8 h-8  rounded-full overflow-hidden">
-                                    <img class="w-full h-full object-cover" src="assets/images/placeholder.jpg">
+                                    <img class="w-full h-full object-cover" src="/assets/images/placeholder.jpg">
                                 </div>
                                 @endif
                                 <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
