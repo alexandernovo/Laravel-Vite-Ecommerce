@@ -27,12 +27,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', [LoginController::class, 'login'])->name('login'); //login View
 Route::post('/login', [LoginController::class, 'loginPost'])->name('login'); //login Action
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+//Register Controller
+Route::get('/register', [RegisterController::class, 'register'])->name('register'); //register View
+Route::post('/register', [RegisterController::class, 'registerPost'])->name('register'); //register Action
+
 
 Route::group(['middleware' => 'auth'], function () {
-    //Register Controller
-    Route::get('/register', [RegisterController::class, 'register'])->name('register'); //register View
-    Route::post('/register', [RegisterController::class, 'registerPost'])->name('register'); //register Action
-
     //Admin Controller
     Route::get('/admin', [AdminController::class, 'adminHome'])->name('admin');
 
