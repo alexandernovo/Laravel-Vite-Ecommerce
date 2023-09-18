@@ -29,8 +29,6 @@ class LoginController extends Controller
             $user = Auth::user();
             if ($user->role === 1) {
                 return redirect()->route('admin')->with('success', 'Login Successfull');
-            } else if ($user->role === 2) {
-                return redirect()->route('home')->with('success', 'Login Successfull');
             } else {
                 return redirect()->route('home')->with('success', 'Login Successfull');
             }
