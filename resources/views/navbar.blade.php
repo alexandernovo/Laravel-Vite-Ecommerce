@@ -88,7 +88,7 @@
                                         Sign up
                                     </a>
                                     @else
-                                    <form method="POST" action="{{route('logout')}}" role="none">
+                                    <form method="POST" action="{{route('logout')}}">
                                         @csrf
                                         <button type="submit" class="block px-4 py-2 w-full text-start text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign out</button>
                                     </form>
