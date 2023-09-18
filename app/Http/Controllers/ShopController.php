@@ -48,9 +48,8 @@ class ShopController extends Controller
                     ->withInput()
                     ->withErrors($validator);
             }
-            $user = Auth::user();
             $data = [
-                'users_id'          => $user->users_id,
+                'users_id'          => Auth::id(),
                 'shop_name'         => $this->request->input('shop_name'),
                 'shop_description'  => $this->request->input('shop_description'),
                 'shop_address'      => $this->request->input('shop_address'),
