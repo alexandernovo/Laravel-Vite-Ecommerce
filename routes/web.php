@@ -28,23 +28,25 @@ Route::get('/login', [LoginController::class, 'login'])->name('login'); //login 
 Route::post('/login', [LoginController::class, 'loginPost'])->name('login'); //login Action
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
-//Register Controller
-Route::get('/register', [RegisterController::class, 'register'])->name('register'); //register View
-Route::post('/register', [RegisterController::class, 'registerPost'])->name('register'); //register Action
+Route::group(['middleware' => 'auth'], function () {
+    //Register Controller
+    Route::get('/register', [RegisterController::class, 'register'])->name('register'); //register View
+    Route::post('/register', [RegisterController::class, 'registerPost'])->name('register'); //register Action
 
-//Admin Controller
-Route::get('/admin', [AdminController::class, 'adminHome'])->name('admin');
+    //Admin Controller
+    Route::get('/admin', [AdminController::class, 'adminHome'])->name('admin');
 
-//User Controller
-Route::get('/user', [UserController::class, 'userhome'])->name('user');
+    //User Controller
+    Route::get('/user', [UserController::class, 'userhome'])->name('user');
 
-//Shop Controller
-Route::get('/shop', [ShopController::class, 'usershop'])->name('shop');
-Route::get('/shop/registerShop', [ShopController::class, 'registerShop'])->name('registerShop'); //registerShopView
-Route::post('/shop/registerShopPost', [ShopController::class, 'registerShopPost'])->name('registerShopPost'); //registerShopPost
+    //Shop Controller
+    Route::get('/shop', [ShopController::class, 'usershop'])->name('shop');
+    Route::get('/shop/registerShop', [ShopController::class, 'registerShop'])->name('registerShop'); //registerShopView
+    Route::post('/shop/registerShopPost', [ShopController::class, 'registerShopPost'])->name('registerShopPost'); //registerShopPost
 
-//Product Controller
-Route::get('/products', [ProductController::class, 'products'])->name('products');
+    //Product Controller
+    Route::get('/products', [ProductController::class, 'products'])->name('products');
+});
 
 //Home Controller
 Route::get('/', [HomeController::class, 'home'])->name('home');
